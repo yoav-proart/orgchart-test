@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Org hover-card test</title>
+<style>
+  body { font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; }
+  .org { display: flex; gap: 16px; flex-wrap: wrap; }
+  .person {
+    position: relative; border: 1px solid #d0d7de; border-radius: 10px; padding: 10px 14px;
+    background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.06); cursor: default;
+  }
+  .person:hover::after {
+    content: attr(data-card); position: absolute; top: 110%; left: 0; z-index: 10;
+    white-space: pre; background: #fff; border: 1px solid #d0d7de; border-radius: 12px;
+    padding: 12px 14px; width: 260px; box-shadow: 0 8px 30px rgba(0,0,0,.15);
+  }
+</style>
+<body>
+  <h1>Org hover-card test</h1>
+  <div class="org">
+    <div class="person" data-card="Role: CEO\nDept: Executive\nEmail: ceo@example.org">Alice Cohen</div>
+    <div class="person" data-card="Role: Head of HR\nDept: People & Culture\nEmail: hr@example.org">Ben Shah</div>
+  </div>
+</body>
+</html>
